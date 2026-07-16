@@ -1,0 +1,41 @@
+name: Mobile Test Automation Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Runs everyday at 21:30 UTC (Which equals 3:00 AM Indian Standard Time)
+    - cron: '30 21 * * *'
+  workflow_dispatch: # This allows you to run it manually via the GitHub UI anytime
+
+jobs:
+  mobile_automation_test:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v4
+
+      - name: Configure Java Development Kit Environment
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+          cache: 'maven'
+
+      - name: Install Node.js Platform
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install and Spin Up Appium Engine
+        run: |
+          npm install -g appium
+          appium driver install xcuitest
+          appium --log server.log &
+
+      - name: Execute Maven TDD Test Suites
+        run: |
+          mvn clean test
