@@ -1,0 +1,82 @@
+#--------------------------------------------------
+# Framework Configuration
+# Override any value at runtime: -Dplatform=ios
+#
+# YAML chosen over .properties because:
+# - Supports nested structure
+# - Groups Android caps under android: key
+# - Groups iOS caps under ios: key
+# - Much more readable than flat properties file
+#
+# BrowserStack credentials in env variables:
+# - config.yaml goes to Git
+# - Credentials must never be in Git
+# - export BS_USERNAME=yourname
+# - export BS_ACCESS_KEY=yourkey
+#
+# noReset: true  = keeps app data (local dev)
+# noReset: false = clean state each run (CI/CD)
+#
+# implicit wait = global, every findElement
+# explicit wait = targeted, specific conditions
+#--------------------------------------------------
+
+platform: iOS
+
+#-- Appium server ------------------------------------
+appium:
+  server:
+    host: 127.0.0.1
+    port: 4723
+
+#-- Timeouts (seconds) -------------------------------
+timeouts:
+  implicit: 10
+  explicit: 20
+  pageLoad: 30
+
+#-- Android capabilities -----------------------------
+android:
+  deviceName: 33101FDH2003XZ
+  platformVersion: "16"
+  automationName: UiAutomator2
+  appPackage: com.saucelabs.mydemoapp.android
+  appActivity: com.saucelabs.mydemoapp.android.view.activities.SplashActivity
+  noReset: false
+  autoGrantPermissions: true
+  newCommandTimeout: 300
+  appWaitActivity: com.saucelabs.mydemoapp.android.view.activities.*
+  appWaitDuration: 30000
+
+#-- iOS capabilities ---------------------------------
+ios:
+  deviceName: iPhone 12 Pro Max
+  platformVersion: "18.5"
+  automationName: XCUITest
+  udid: 00008101-000A18C00C2A001E
+  bundleId: com.saucelabs.mydemo.app.ios.88W57JQ338
+  noReset: true
+  newCommandTimeout: 300
+  wdaLaunchTimeout: 120000
+
+#-- BrowserStack cloud -------------------------------
+browserstack:
+  username: ${BS_USERNAME}
+  accessKey: ${BS_ACCESS_KEY}
+  hub: https://hub.browserstack.com/wd/hub
+  android:
+    device: Samsung Galaxy S23
+    osVersion: "13.0"
+    app: ${BS_APP_URL_ANDROID}
+    buildName: Android-CI-Build
+  ios:
+    device: iPhone 14
+    osVersion: "16"
+    app: ${BS_APP_URL_IOS}
+    buildName: iOS-CI-Build
+
+#-- Screenshots --------------------------------------
+screenshots:
+  path: target/screenshots/
+  onFailure: true
+  onSuccess: false

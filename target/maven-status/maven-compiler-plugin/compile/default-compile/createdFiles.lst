@@ -1,0 +1,8 @@
+com/framework/config/ConfigManager.class
+com/framework/pagescommon/ios/LoginPage.class
+org/example/Main.class
+com/framework/pagescommon/LoginPage.class
+com/framework/pagescommon/ios/MyDemoAppHomePage.class
+com/framework/drivers/DriverManager.class
+com/framework/base/BasePage.class
+com/framework/pagescommon/MyDemoAppHomePage.class

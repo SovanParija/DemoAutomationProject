@@ -1,0 +1,27 @@
+{
+  "validUser": {
+    "username": "bod@example.com",
+    "password": "10203040",
+    "expectedScreen": "home"
+  },
+  "invalidUser": {
+    "username": "bod@example.com",
+    "password": "wrongpassword",
+    "expectedError": "Username and password do not match"
+  },
+  "lockedUser": {
+    "username": "alice@example.com",
+    "password": "10203040",
+    "expectedError": "Sorry, this user has been locked out"
+  },
+  "emptyUsername": {
+    "username": "",
+    "password": "10203040",
+    "expectedError": "Username is required"
+  },
+  "emptyPassword": {
+    "username": "bod@example.com",
+    "password": "",
+    "expectedError": "Password is required"
+  }
+}
