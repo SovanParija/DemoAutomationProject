@@ -1,0 +1,144 @@
+pipeline {
+    agent any
+
+    environment {
+        JAVA_HOME = '/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home'
+        MAVEN_HOME = '/Users/sovanparija/Downloads/apache-maven-3.9.0'
+        PATH = "${JAVA_HOME}/bin:${MAVEN_HOME}/bin:/Users/sovanparija/.nvm/versions/node/v20.20.2/bin:${env.PATH}"
+    }
+
+    triggers {
+        cron('0 3 * * *') // 3AM every night
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo '==========================================='
+                echo 'STAGE 1 — Checking out from GitHub'
+                echo '==========================================='
+                checkout scm
+            }
+        }
+
+        stage('Verify Environment') {
+            steps {
+                echo '==========================================='
+                echo 'STAGE 2 — Verifying environment'
+                echo '==========================================='
+                sh 'java -version'
+                sh 'mvn -version'
+                sh 'node --version'
+                sh 'appium --version'
+                sh 'adb devices'
+            }
+        }
+
+        stage('Start Appium') {
+            steps {
+                echo '==========================================='
+                echo 'STAGE 3 — Starting Appium server'
+                echo '==========================================='
+                sh '''
+                    pkill -f appium || true
+                    sleep 2
+                    nohup appium --port 4723 > /tmp/appium.log 2>&1 &
+                    sleep 5
+                    echo "Appium started on port 4723"
+                '''
+            }
+        }
+
+        stage('Run Android Tests') {
+            steps {
+                echo '==========================================='
+                echo 'STAGE 4 — Running Android smoke tests'
+                echo '==========================================='
+                sh '''
+                    mvn clean test -Pandroid
+                '''
+            }
+            post {
+                success {
+                    echo 'Android tests PASSED'
+                }
+                failure {
+                    echo 'Android tests FAILED'
+                }
+            }
+        }
+
+        stage('Run BDD Cucumber Tests') {
+            steps {
+                echo '==========================================='
+                echo 'STAGE 5 — Running BDD Cucumber tests'
+                echo '==========================================='
+                sh '''
+                    mvn clean test -Pcucumber
+                '''
+            }
+            post {
+                success {
+                    echo 'BDD tests PASSED'
+                }
+                failure {
+                    echo 'BDD tests FAILED'
+                }
+            }
+        }
+
+        stage('Generate Allure Report') {
+            steps {
+                echo '==========================================='
+                echo 'STAGE 6 — Generating Allure report'
+                echo '==========================================='
+                sh '''
+                    allure generate target/allure-results \
+                    --clean -o target/allure-report || true
+                '''
+            }
+        }
+
+        stage('Archive Results') {
+            steps {
+                echo '==========================================='
+                echo 'STAGE 7 — Archiving results'
+                echo '==========================================='
+                junit allowEmptyResults: true,
+                    testResults: 'target/surefire-reports/*.xml'
+                archiveArtifacts allowEmptyArchive: true,
+                    artifacts: 'target/allure-report/**,target/surefire-reports/**'
+            }
+        }
+
+        stage('Notify') {
+            steps {
+                echo '==========================================='
+                echo 'STAGE 8 — Sending notification'
+                echo '==========================================='
+                script {
+                    def status = currentBuild.result ?: 'SUCCESS'
+                    echo "Pipeline status: ${status}"
+                    echo "Build URL: ${BUILD_URL}"
+                    // Slack notification added when webhook configured
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo '==========================================='
+            echo 'PIPELINE COMPLETE — Cleaning up'
+            echo '==========================================='
+            sh 'pkill -f appium || true'
+        }
+        success {
+            echo '✅ ALL TESTS PASSED'
+        }
+        failure {
+            echo '❌ TESTS FAILED — Check Allure report'
+        }
+    }
+}
