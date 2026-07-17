@@ -4,7 +4,8 @@ pipeline {
     environment {
         JAVA_HOME = '/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home'
         MAVEN_HOME = '/Users/sovanparija/Downloads/apache-maven-3.9.0'
-        PATH = "${JAVA_HOME}/bin:${MAVEN_HOME}/bin:/Users/sovanparija/.nvm/versions/node/v20.20.2/bin:${env.PATH}"
+        NODE_HOME = '/Users/sovanparija/.nvm/versions/node/v20.20.2'
+        PATH = "${JAVA_HOME}/bin:${MAVEN_HOME}/bin:${NODE_HOME}/bin:/usr/local/bin:/usr/bin:/bin:${env.PATH}"
     }
 
     triggers {
