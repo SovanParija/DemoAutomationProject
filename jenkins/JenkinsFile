@@ -5,7 +5,8 @@ pipeline {
         JAVA_HOME = '/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home'
         MAVEN_HOME = '/Users/sovanparija/apache-maven-3.9.0'
         NODE_HOME = '/Users/sovanparija/.nvm/versions/node/v20.20.2'
-        PATH = "${JAVA_HOME}/bin:${MAVEN_HOME}/bin:${NODE_HOME}/bin:/usr/local/bin:/usr/bin:/bin:${env.PATH}"
+        ANDROID_HOME = '/Users/sovanparija/Library/Android/sdk'
+        PATH = "${JAVA_HOME}/bin:${MAVEN_HOME}/bin:${NODE_HOME}/bin:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:/usr/local/bin:/usr/bin:/bin:${env.PATH}"
     }
 
     triggers {
