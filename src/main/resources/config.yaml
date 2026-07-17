@@ -21,7 +21,7 @@
 # explicit wait = targeted, specific conditions
 #--------------------------------------------------
 
-platform: iOS
+platform: android
 
 #-- Appium server ------------------------------------
 appium:
