@@ -1,4 +1,5 @@
 package com.framework.base;
+import com.framework.ai.FailureAnalyzer;
 
 // ConfigManager — we use it to log which platform is running
 
@@ -162,6 +163,25 @@ public abstract class BaseTest {
                 // Take screenshot immediately while app is still open
                 // Attach it to Allure report for visual debugging
                 attachScreenshot(testName);
+
+                // AI analysis — best effort, never blocks cleanup.
+                // FailureAnalyzer catches its own exceptions and
+                // returns a string instead of throwing, so a Claude
+                // API hiccup can never prevent quitDriver() below.
+                try {
+                    FailureAnalyzer analyzer = new FailureAnalyzer();
+                    String analysis = analyzer.analyze(
+                            testName,
+                            result.getThrowable().getMessage());
+
+                    Allure.addAttachment(
+                            testName + "_AI_ANALYSIS",
+                            "text/plain",
+                            analysis);
+                } catch (Exception e) {
+                    log.warn("Could not attach AI analysis: {}",
+                            e.getMessage());
+                }
             }
 
             case ITestResult.SKIP -> {
@@ -182,7 +202,6 @@ public abstract class BaseTest {
 
         log.info("└─ Finished: {}", testName);
     }
-
     // ── SCREENSHOT ────────────────────────────────────────────
     // Called automatically when a test fails
     // Takes screenshot and attaches to Allure report

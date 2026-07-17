@@ -61,8 +61,8 @@ ios:
 
 #-- BrowserStack cloud -------------------------------
 browserstack:
-  username: ${BS_USERNAME}
-  accessKey: ${BS_ACCESS_KEY}
+  username: $sovanshree_vRGkhr
+  accessKey: $zEh3vg64F7szdn2GpcAJ
   hub: https://hub.browserstack.com/wd/hub
   android:
     device: Samsung Galaxy S23
