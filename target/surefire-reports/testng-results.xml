@@ -1,27 +1,255 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
+<testng-results ignored="0" total="4" passed="0" failed="3" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-17T07:09:48 BST" name="Command line suite" finished-at="2026-07-17T07:09:49 BST" duration-ms="1248">
+  <suite started-at="2026-07-18T22:12:08 GMT-07:00" name="Command line suite" finished-at="2026-07-18T22:12:10 GMT-07:00" duration-ms="2286">
     <groups>
+      <group name="regression">
+        <method signature="LoginAPITest.testLoginResponseTime()[pri:0, instance:com.framework.api.tests.LoginAPITest@eadb475]" name="testLoginResponseTime" class="com.framework.api.tests.LoginAPITest"/>
+      </group> <!-- regression -->
       <group name="smoke">
-        <method signature="MDA_1234_ValidLoginTest.testValidLogin()[pri:0, instance:com.framework.testscommon.MDA_1234_ValidLoginTest@3a7704c]" name="testValidLogin" class="com.framework.testscommon.MDA_1234_ValidLoginTest"/>
+        <method signature="LoginAPITest.testLoginMissingPasswordReturns400()[pri:0, instance:com.framework.api.tests.LoginAPITest@eadb475]" name="testLoginMissingPasswordReturns400" class="com.framework.api.tests.LoginAPITest"/>
+        <method signature="LoginAPITest.testValidLoginReturnsToken()[pri:0, instance:com.framework.api.tests.LoginAPITest@eadb475]" name="testValidLoginReturnsToken" class="com.framework.api.tests.LoginAPITest"/>
+        <method signature="MDA_1234_ValidLoginTest.testValidLogin()[pri:0, instance:com.framework.testscommon.MDA_1234_ValidLoginTest@63a5e46c]" name="testValidLogin" class="com.framework.testscommon.MDA_1234_ValidLoginTest"/>
       </group> <!-- smoke -->
       <group name="MDA-1234">
-        <method signature="MDA_1234_ValidLoginTest.testValidLogin()[pri:0, instance:com.framework.testscommon.MDA_1234_ValidLoginTest@3a7704c]" name="testValidLogin" class="com.framework.testscommon.MDA_1234_ValidLoginTest"/>
+        <method signature="MDA_1234_ValidLoginTest.testValidLogin()[pri:0, instance:com.framework.testscommon.MDA_1234_ValidLoginTest@63a5e46c]" name="testValidLogin" class="com.framework.testscommon.MDA_1234_ValidLoginTest"/>
       </group> <!-- MDA-1234 -->
+      <group name="api">
+        <method signature="LoginAPITest.testLoginMissingPasswordReturns400()[pri:0, instance:com.framework.api.tests.LoginAPITest@eadb475]" name="testLoginMissingPasswordReturns400" class="com.framework.api.tests.LoginAPITest"/>
+        <method signature="LoginAPITest.testLoginResponseTime()[pri:0, instance:com.framework.api.tests.LoginAPITest@eadb475]" name="testLoginResponseTime" class="com.framework.api.tests.LoginAPITest"/>
+        <method signature="LoginAPITest.testValidLoginReturnsToken()[pri:0, instance:com.framework.api.tests.LoginAPITest@eadb475]" name="testValidLoginReturnsToken" class="com.framework.api.tests.LoginAPITest"/>
+      </group> <!-- api -->
     </groups>
-    <test started-at="2026-07-17T07:09:48 BST" name="Command line test" finished-at="2026-07-17T07:09:49 BST" duration-ms="1248">
+    <test started-at="2026-07-18T22:12:08 GMT-07:00" name="Command line test" finished-at="2026-07-18T22:12:10 GMT-07:00" duration-ms="2286">
+      <class name="com.framework.api.tests.LoginAPITest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.framework.api.tests.LoginAPITest@eadb475]" started-at="2026-07-18T22:12:07 GMT-07:00" name="setup" finished-at="2026-07-18T22:12:08 GMT-07:00" duration-ms="988" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testLoginMissingPasswordReturns400()[pri:0, instance:com.framework.api.tests.LoginAPITest@eadb475]" started-at="2026-07-18T22:12:10 GMT-07:00" name="testLoginMissingPasswordReturns400" description="Login without password returns 400" finished-at="2026-07-18T22:12:10 GMT-07:00" duration-ms="497" status="FAIL">
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[Specification to merge with cannot be null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: Specification to merge with cannot be null
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:53)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:240)
+at io.restassured.internal.SpecificationMerger.merge(SpecificationMerger.groovy:94)
+at io.restassured.internal.SpecificationMerger$merge.call(Unknown Source)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:148)
+at io.restassured.internal.RequestSpecificationImpl.spec(RequestSpecificationImpl.groovy:944)
+at io.restassured.RestAssured.given(RestAssured.java:709)
+at com.framework.api.clients.APIClient.post(APIClient.java:60)
+at com.framework.api.tests.LoginAPITest.testLoginMissingPasswordReturns400(LoginAPITest.java:74)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginMissingPasswordReturns400 -->
+        <test-method signature="testLoginResponseTime()[pri:0, instance:com.framework.api.tests.LoginAPITest@eadb475]" started-at="2026-07-18T22:12:10 GMT-07:00" name="testLoginResponseTime" description="Login responds within 2 seconds" finished-at="2026-07-18T22:12:10 GMT-07:00" duration-ms="4" status="FAIL">
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[Specification to merge with cannot be null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: Specification to merge with cannot be null
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+at io.restassured.internal.SpecificationMerger.merge(SpecificationMerger.groovy:94)
+at io.restassured.internal.SpecificationMerger$merge.call(Unknown Source)
+at io.restassured.internal.RequestSpecificationImpl.spec(RequestSpecificationImpl.groovy:944)
+at io.restassured.RestAssured.given(RestAssured.java:709)
+at com.framework.api.clients.APIClient.post(APIClient.java:60)
+at com.framework.api.tests.LoginAPITest.testLoginResponseTime(LoginAPITest.java:100)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginResponseTime -->
+        <test-method signature="testValidLoginReturnsToken()[pri:0, instance:com.framework.api.tests.LoginAPITest@eadb475]" started-at="2026-07-18T22:12:10 GMT-07:00" name="testValidLoginReturnsToken" description="Valid login returns 200 and a token" finished-at="2026-07-18T22:12:10 GMT-07:00" duration-ms="3" status="FAIL">
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[Specification to merge with cannot be null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: Specification to merge with cannot be null
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+at io.restassured.internal.SpecificationMerger.merge(SpecificationMerger.groovy:94)
+at io.restassured.internal.SpecificationMerger$merge.call(Unknown Source)
+at io.restassured.internal.RequestSpecificationImpl.spec(RequestSpecificationImpl.groovy:944)
+at io.restassured.RestAssured.given(RestAssured.java:709)
+at com.framework.api.clients.APIClient.post(APIClient.java:60)
+at com.framework.api.tests.LoginAPITest.testValidLoginReturnsToken(LoginAPITest.java:47)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidLoginReturnsToken -->
+      </class> <!-- com.framework.api.tests.LoginAPITest -->
       <class name="com.framework.testscommon.MDA_1234_ValidLoginTest">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.framework.testscommon.MDA_1234_ValidLoginTest@3a7704c]" started-at="2026-07-17T07:09:48 BST" name="beforeSuite" finished-at="2026-07-17T07:09:48 BST" duration-ms="20" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.framework.testscommon.MDA_1234_ValidLoginTest@63a5e46c]" started-at="2026-07-18T22:12:08 GMT-07:00" name="beforeSuite" finished-at="2026-07-18T22:12:08 GMT-07:00" duration-ms="7" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.framework.testscommon.MDA_1234_ValidLoginTest@3a7704c]" started-at="2026-07-17T07:09:48 BST" name="beforeClass" finished-at="2026-07-17T07:09:48 BST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.framework.testscommon.MDA_1234_ValidLoginTest@63a5e46c]" started-at="2026-07-18T22:12:08 GMT-07:00" name="beforeClass" finished-at="2026-07-18T22:12:08 GMT-07:00" duration-ms="7" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.framework.testscommon.MDA_1234_ValidLoginTest@3a7704c]" started-at="2026-07-17T07:09:48 BST" name="beforeMethod" finished-at="2026-07-17T07:09:49 BST" duration-ms="1067" status="FAIL">
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.framework.testscommon.MDA_1234_ValidLoginTest@63a5e46c]" started-at="2026-07-18T22:12:08 GMT-07:00" name="beforeMethod" finished-at="2026-07-18T22:12:10 GMT-07:00" duration-ms="1496" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -32,11 +260,11 @@
           <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
               <![CDATA[Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'Sovans-MacBook-Pro.local', ip: '2601:500:8300:9a40:0:0:0:84b0%en0']]>
+Host info: host: 'Sovans-MacBook-Pro.local', ip: '2601:500:8300:9a40:fdc5:2feb:338:ac53%en0']]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'Sovans-MacBook-Pro.local', ip: '2601:500:8300:9a40:0:0:0:84b0%en0'
+Host info: host: 'Sovans-MacBook-Pro.local', ip: '2601:500:8300:9a40:fdc5:2feb:338:ac53%en0'
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:620)
 at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:274)
 at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:163)
@@ -45,7 +273,7 @@ at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:101)
 at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:113)
 at com.framework.drivers.DriverManager.createAndroidDriver(DriverManager.java:185)
 at com.framework.drivers.DriverManager.initDriver(DriverManager.java:50)
-at com.framework.base.BaseTest.beforeMethod(BaseTest.java:131)
+at com.framework.base.BaseTest.beforeMethod(BaseTest.java:132)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -117,15 +345,15 @@ at java.base/java.lang.Thread.run(Thread.java:842)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testValidLogin()[pri:0, instance:com.framework.testscommon.MDA_1234_ValidLoginTest@3a7704c]" started-at="2026-07-17T07:09:49 BST" name="testValidLogin" description="Valid login navigates to home screen" finished-at="2026-07-17T07:09:49 BST" duration-ms="0" status="SKIP">
+        <test-method signature="testValidLogin()[pri:0, instance:com.framework.testscommon.MDA_1234_ValidLoginTest@63a5e46c]" started-at="2026-07-18T22:12:10 GMT-07:00" name="testValidLogin" description="Valid login navigates to home screen" finished-at="2026-07-18T22:12:10 GMT-07:00" duration-ms="0" status="SKIP">
           <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
               <![CDATA[Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'Sovans-MacBook-Pro.local', ip: '2601:500:8300:9a40:0:0:0:84b0%en0']]>
+Host info: host: 'Sovans-MacBook-Pro.local', ip: '2601:500:8300:9a40:fdc5:2feb:338:ac53%en0']]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'Sovans-MacBook-Pro.local', ip: '2601:500:8300:9a40:0:0:0:84b0%en0'
+Host info: host: 'Sovans-MacBook-Pro.local', ip: '2601:500:8300:9a40:fdc5:2feb:338:ac53%en0'
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:620)
 at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:274)
 at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:163)
@@ -134,7 +362,7 @@ at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:101)
 at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:113)
 at com.framework.drivers.DriverManager.createAndroidDriver(DriverManager.java:185)
 at com.framework.drivers.DriverManager.initDriver(DriverManager.java:50)
-at com.framework.base.BaseTest.beforeMethod(BaseTest.java:131)
+at com.framework.base.BaseTest.beforeMethod(BaseTest.java:132)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -206,22 +434,22 @@ at java.base/java.lang.Thread.run(Thread.java:842)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidLogin -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.framework.testscommon.MDA_1234_ValidLoginTest@3a7704c]" started-at="2026-07-17T07:09:49 BST" name="afterMethod" finished-at="2026-07-17T07:09:49 BST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.framework.testscommon.MDA_1234_ValidLoginTest@63a5e46c]" started-at="2026-07-18T22:12:10 GMT-07:00" name="afterMethod" finished-at="2026-07-18T22:12:10 GMT-07:00" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testValidLogin status=SKIP method=MDA_1234_ValidLoginTest.testValidLogin()[pri:0, instance:com.framework.testscommon.MDA_1234_ValidLoginTest@3a7704c] output={null}]]]>
+                <![CDATA[[TestResult name=testValidLogin status=SKIP method=MDA_1234_ValidLoginTest.testValidLogin()[pri:0, instance:com.framework.testscommon.MDA_1234_ValidLoginTest@63a5e46c] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.framework.testscommon.MDA_1234_ValidLoginTest@3a7704c]" started-at="2026-07-17T07:09:49 BST" name="afterClass" finished-at="2026-07-17T07:09:49 BST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.framework.testscommon.MDA_1234_ValidLoginTest@63a5e46c]" started-at="2026-07-18T22:12:10 GMT-07:00" name="afterClass" finished-at="2026-07-18T22:12:10 GMT-07:00" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.framework.testscommon.MDA_1234_ValidLoginTest@3a7704c]" started-at="2026-07-17T07:09:49 BST" name="afterSuite" finished-at="2026-07-17T07:09:49 BST" duration-ms="9" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.framework.testscommon.MDA_1234_ValidLoginTest@63a5e46c]" started-at="2026-07-18T22:12:11 GMT-07:00" name="afterSuite" finished-at="2026-07-18T22:12:11 GMT-07:00" duration-ms="15" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

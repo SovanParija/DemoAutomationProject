@@ -3,6 +3,14 @@
 <suite name="Failed suite [Command line suite]" verbose="0">
   <test thread-count="5" name="Command line test(failed)" verbose="0">
     <classes>
+      <class name="com.framework.api.tests.LoginAPITest">
+        <methods>
+          <include name="setup"/>
+          <include name="testValidLoginReturnsToken"/>
+          <include name="testLoginResponseTime"/>
+          <include name="testLoginMissingPasswordReturns400"/>
+        </methods>
+      </class> <!-- com.framework.api.tests.LoginAPITest -->
       <class name="com.framework.testscommon.MDA_1234_ValidLoginTest">
         <methods>
           <include name="beforeClass"/>
@@ -10,8 +18,8 @@
           <include name="afterClass"/>
           <include name="beforeSuite"/>
           <include name="afterMethod"/>
-          <include name="testValidLogin"/>
           <include name="afterSuite"/>
+          <include name="testValidLogin"/>
         </methods>
       </class> <!-- com.framework.testscommon.MDA_1234_ValidLoginTest -->
     </classes>

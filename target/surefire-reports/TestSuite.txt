@@ -1,10 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 1, Time elapsed: 8.028 sec <<< FAILURE!
-beforeMethod(com.framework.testscommon.MDA_1234_ValidLoginTest)  Time elapsed: 7.866 sec  <<< FAILURE!
+Tests run: 5, Failures: 4, Errors: 0, Skipped: 1, Time elapsed: 10.86 sec <<< FAILURE!
+beforeMethod(com.framework.testscommon.MDA_1234_ValidLoginTest)  Time elapsed: 10.01 sec  <<< FAILURE!
 org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'Sovans-MacBook-Pro.local', ip: '2601:500:8300:9a40:0:0:0:84b0%en0'
+Host info: host: 'Sovans-MacBook-Pro.local', ip: '2601:500:8300:9a40:fdc5:2feb:338:ac53%en0'
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:620)
 	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:274)
 	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:163)
@@ -13,7 +13,7 @@ Host info: host: 'Sovans-MacBook-Pro.local', ip: '2601:500:8300:9a40:0:0:0:84b0%
 	at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:113)
 	at com.framework.drivers.DriverManager.createAndroidDriver(DriverManager.java:185)
 	at com.framework.drivers.DriverManager.initDriver(DriverManager.java:50)
-	at com.framework.base.BaseTest.beforeMethod(BaseTest.java:131)
+	at com.framework.base.BaseTest.beforeMethod(BaseTest.java:132)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -102,4 +102,72 @@ Caused by: java.net.ConnectException: Connection refused
 	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.base/java.lang.Thread.run(Thread.java:842)
+
+testLoginMissingPasswordReturns400(com.framework.api.tests.LoginAPITest)  Time elapsed: 0.502 sec  <<< FAILURE!
+java.lang.IllegalArgumentException: Specification to merge with cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:53)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:240)
+	at io.restassured.internal.SpecificationMerger.merge(SpecificationMerger.groovy:94)
+	at io.restassured.internal.SpecificationMerger$merge.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:148)
+	at io.restassured.internal.RequestSpecificationImpl.spec(RequestSpecificationImpl.groovy:944)
+	at io.restassured.RestAssured.given(RestAssured.java:709)
+	at com.framework.api.clients.APIClient.post(APIClient.java:60)
+	at com.framework.api.tests.LoginAPITest.testLoginMissingPasswordReturns400(LoginAPITest.java:74)
+
+testLoginResponseTime(com.framework.api.tests.LoginAPITest)  Time elapsed: 0.008 sec  <<< FAILURE!
+java.lang.IllegalArgumentException: Specification to merge with cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.SpecificationMerger.merge(SpecificationMerger.groovy:94)
+	at io.restassured.internal.SpecificationMerger$merge.call(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.spec(RequestSpecificationImpl.groovy:944)
+	at io.restassured.RestAssured.given(RestAssured.java:709)
+	at com.framework.api.clients.APIClient.post(APIClient.java:60)
+	at com.framework.api.tests.LoginAPITest.testLoginResponseTime(LoginAPITest.java:100)
+
+testValidLoginReturnsToken(com.framework.api.tests.LoginAPITest)  Time elapsed: 0.006 sec  <<< FAILURE!
+java.lang.IllegalArgumentException: Specification to merge with cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.SpecificationMerger.merge(SpecificationMerger.groovy:94)
+	at io.restassured.internal.SpecificationMerger$merge.call(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.spec(RequestSpecificationImpl.groovy:944)
+	at io.restassured.RestAssured.given(RestAssured.java:709)
+	at com.framework.api.clients.APIClient.post(APIClient.java:60)
+	at com.framework.api.tests.LoginAPITest.testValidLoginReturnsToken(LoginAPITest.java:47)
 

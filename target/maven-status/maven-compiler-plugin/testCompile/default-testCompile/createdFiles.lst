@@ -1,6 +1,9 @@
 com/framework/runners/CucumberRunner.class
+com/framework/api/clients/APIClient.class
+com/framework/api/base/BaseAPITest.class
 com/framework/base/BaseTest.class
 com/framework/stepdefinations/LoginStepDefinitions.class
+com/framework/api/tests/LoginAPITest.class
 com/framework/runners/Hooks.class
 com/framework/testscommon/MDA_1234_ValidLoginTest.class
 com/framework/utils/TestDataManager.class

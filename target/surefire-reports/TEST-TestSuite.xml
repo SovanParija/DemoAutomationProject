@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="1" name="TestSuite" time="7.874" errors="0" skipped="1">
+<testsuite tests="5" failures="4" name="TestSuite" time="10.547" errors="0" skipped="1">
   <properties>
     <property name="idea.version" value="2022.3.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -36,7 +36,7 @@
     <property name="os.version" value="13.7"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="user.home" value="/Users/sovanparija"/>
-    <property name="user.timezone" value="Europe/London"/>
+    <property name="user.timezone" value="America/Phoenix"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="17"/>
     <property name="user.name" value="sovanparija"/>
@@ -60,10 +60,10 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase classname="com.framework.testscommon.MDA_1234_ValidLoginTest" name="beforeMethod" time="7.866">
+  <testcase classname="com.framework.testscommon.MDA_1234_ValidLoginTest" name="beforeMethod" time="10.01">
     <failure message="Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: &apos;Sovans-MacBook-Pro.local&apos;, ip: &apos;2601:500:8300:9a40:0:0:0:84b0%en0&apos;" type="org.openqa.selenium.SessionNotCreatedException">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: &apos;Sovans-MacBook-Pro.local&apos;, ip: &apos;2601:500:8300:9a40:0:0:0:84b0%en0&apos;
+Host info: host: &apos;Sovans-MacBook-Pro.local&apos;, ip: &apos;2601:500:8300:9a40:fdc5:2feb:338:ac53%en0&apos;" type="org.openqa.selenium.SessionNotCreatedException">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
+Host info: host: &apos;Sovans-MacBook-Pro.local&apos;, ip: &apos;2601:500:8300:9a40:fdc5:2feb:338:ac53%en0&apos;
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:620)
 	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:274)
 	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:163)
@@ -72,7 +72,7 @@ Host info: host: &apos;Sovans-MacBook-Pro.local&apos;, ip: &apos;2601:500:8300:9
 	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:113)
 	at com.framework.drivers.DriverManager.createAndroidDriver(DriverManager.java:185)
 	at com.framework.drivers.DriverManager.initDriver(DriverManager.java:50)
-	at com.framework.base.BaseTest.beforeMethod(BaseTest.java:131)
+	at com.framework.base.BaseTest.beforeMethod(BaseTest.java:132)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -162,19 +162,104 @@ Caused by: java.net.ConnectException: Connection refused
 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.base/java.lang.Thread.run(Thread.java:842)
 </failure>
-    <system-out>Configuring TestNG with: org.apache.maven.surefire.testng.conf.TestNG652Configurator@53b7f657
-07:09:48 [main] INFO  com.framework.config.ConfigManager - config.yaml loaded - platform: android
-07:09:48 [main] INFO  com.framework.base.BaseTest - ╔══════════════════════════════╗
-07:09:48 [main] INFO  com.framework.base.BaseTest - ║   TEST SUITE STARTING        ║
-07:09:48 [main] INFO  com.framework.base.BaseTest - ╚══════════════════════════════╝
-07:09:48 [main] INFO  com.framework.base.BaseTest - Platform    : android
-07:09:48 [main] INFO  com.framework.base.BaseTest - Environment : qa
-07:09:48 [main] INFO  com.framework.base.BaseTest - ── Setting up class: MDA_1234_ValidLoginTest
-07:09:48 [main] INFO  com.framework.base.BaseTest - Starting: testValidLogin
-07:09:48 [main] INFO  com.framework.drivers.DriverManager - Connecting to Appium: http://127.0.0.1:4723
+    <system-out>Configuring TestNG with: org.apache.maven.surefire.testng.conf.TestNG652Configurator@3e2059ae
+22:12:07 [main] INFO  com.framework.config.ConfigManager - config.yaml loaded - platform: android
+22:12:07 [main] WARN  org.testng.internal.Configuration - Detected a static method [com.framework.api.base.BaseAPITest.setup()]. Static configuration methods can cause unexpected behavior.
+22:12:07 [main] INFO  com.framework.api.base.BaseAPITest - ╔══════════════════════════════╗
+22:12:07 [main] INFO  com.framework.api.base.BaseAPITest - ║   API TEST SUITE STARTING    ║
+22:12:07 [main] INFO  com.framework.api.base.BaseAPITest - ╚══════════════════════════════╝
+22:12:08 [main] INFO  com.framework.api.base.BaseAPITest - API base URI: https://reqres.in/com/framework
+22:12:08 [main] INFO  com.framework.base.BaseTest - ╔══════════════════════════════╗
+22:12:08 [main] INFO  com.framework.base.BaseTest - ║   TEST SUITE STARTING        ║
+22:12:08 [main] INFO  com.framework.base.BaseTest - ╚══════════════════════════════╝
+22:12:08 [main] INFO  com.framework.base.BaseTest - Platform    : android
+22:12:08 [main] INFO  com.framework.base.BaseTest - Environment : qa
+22:12:08 [main] INFO  com.framework.base.BaseTest - ── Setting up class: MDA_1234_ValidLoginTest
+22:12:08 [main] INFO  com.framework.base.BaseTest - Starting: testValidLogin
+22:12:08 [main] INFO  com.framework.drivers.DriverManager - Connecting to Appium: http://127.0.0.1:4723
 </system-out>
   </testcase>
-  <testcase classname="com.framework.testscommon.MDA_1234_ValidLoginTest" name="testValidLogin" time="0.008">
+  <testcase classname="com.framework.testscommon.MDA_1234_ValidLoginTest" name="testValidLogin" time="0.021">
     <skipped/>
+  </testcase>
+  <testcase classname="com.framework.api.tests.LoginAPITest" name="testLoginMissingPasswordReturns400" time="0.502">
+    <failure message="Specification to merge with cannot be null" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Specification to merge with cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:53)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:240)
+	at io.restassured.internal.SpecificationMerger.merge(SpecificationMerger.groovy:94)
+	at io.restassured.internal.SpecificationMerger$merge.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:148)
+	at io.restassured.internal.RequestSpecificationImpl.spec(RequestSpecificationImpl.groovy:944)
+	at io.restassured.RestAssured.given(RestAssured.java:709)
+	at com.framework.api.clients.APIClient.post(APIClient.java:60)
+	at com.framework.api.tests.LoginAPITest.testLoginMissingPasswordReturns400(LoginAPITest.java:74)
+</failure>
+    <system-out>22:12:10 [main] WARN  com.framework.base.BaseTest - ⊘ SKIPPED: testValidLogin
+22:12:10 [main] INFO  com.framework.base.BaseTest - └─ Finished: testValidLogin
+22:12:10 [main] INFO  com.framework.base.BaseTest - ── Tearing down class: MDA_1234_ValidLoginTest
+22:12:10 [main] INFO  com.framework.api.clients.APIClient - POST /login body={email=peter@klaven}
+</system-out>
+  </testcase>
+  <testcase classname="com.framework.api.tests.LoginAPITest" name="testLoginResponseTime" time="0.008">
+    <failure message="Specification to merge with cannot be null" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Specification to merge with cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.SpecificationMerger.merge(SpecificationMerger.groovy:94)
+	at io.restassured.internal.SpecificationMerger$merge.call(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.spec(RequestSpecificationImpl.groovy:944)
+	at io.restassured.RestAssured.given(RestAssured.java:709)
+	at com.framework.api.clients.APIClient.post(APIClient.java:60)
+	at com.framework.api.tests.LoginAPITest.testLoginResponseTime(LoginAPITest.java:100)
+</failure>
+    <system-out>22:12:10 [main] INFO  com.framework.api.clients.APIClient - POST /login body={password=cityslicka, email=eve.holt@reqres.in}
+</system-out>
+  </testcase>
+  <testcase classname="com.framework.api.tests.LoginAPITest" name="testValidLoginReturnsToken" time="0.006">
+    <failure message="Specification to merge with cannot be null" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Specification to merge with cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.SpecificationMerger.merge(SpecificationMerger.groovy:94)
+	at io.restassured.internal.SpecificationMerger$merge.call(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.spec(RequestSpecificationImpl.groovy:944)
+	at io.restassured.RestAssured.given(RestAssured.java:709)
+	at com.framework.api.clients.APIClient.post(APIClient.java:60)
+	at com.framework.api.tests.LoginAPITest.testValidLoginReturnsToken(LoginAPITest.java:47)
+</failure>
+    <system-out>22:12:10 [main] INFO  com.framework.api.clients.APIClient - POST /login body={password=cityslicka, email=eve.holt@reqres.in}
+</system-out>
   </testcase>
 </testsuite>

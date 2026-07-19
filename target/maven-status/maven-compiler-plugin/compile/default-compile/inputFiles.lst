@@ -1,10 +1,14 @@
 /Users/sovanparija/demoProjectTDD/src/main/java/com/framework/ai/ClaudeAIService.java
 /Users/sovanparija/demoProjectTDD/src/main/java/com/framework/ai/ClaudeTest.java
+/Users/sovanparija/demoProjectTDD/src/main/java/com/framework/ai/FailureAnalyzer.java
+/Users/sovanparija/demoProjectTDD/src/main/java/com/framework/ai/PageObjectGenerator.java
+/Users/sovanparija/demoProjectTDD/src/main/java/com/framework/ai/TestGenerator.java
 /Users/sovanparija/demoProjectTDD/src/main/java/com/framework/base/BasePage.java
 /Users/sovanparija/demoProjectTDD/src/main/java/com/framework/config/ConfigManager.java
 /Users/sovanparija/demoProjectTDD/src/main/java/com/framework/drivers/DriverManager.java
 /Users/sovanparija/demoProjectTDD/src/main/java/com/framework/jarvis/AllureResultsReader.java
 /Users/sovanparija/demoProjectTDD/src/main/java/com/framework/jarvis/CommandParser.java
+/Users/sovanparija/demoProjectTDD/src/main/java/com/framework/jarvis/JarvisCompiler.java
 /Users/sovanparija/demoProjectTDD/src/main/java/com/framework/jarvis/JarvisConfig.java
 /Users/sovanparija/demoProjectTDD/src/main/java/com/framework/jarvis/JarvisExecutor.java
 /Users/sovanparija/demoProjectTDD/src/main/java/com/framework/jarvis/JarvisFileWriter.java

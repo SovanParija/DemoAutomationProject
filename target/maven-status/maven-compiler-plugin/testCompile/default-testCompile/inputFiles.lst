@@ -1,3 +1,6 @@
+/Users/sovanparija/demoProjectTDD/src/test/java/com/framework/api/base/BaseAPITest.java
+/Users/sovanparija/demoProjectTDD/src/test/java/com/framework/api/clients/APIClient.java
+/Users/sovanparija/demoProjectTDD/src/test/java/com/framework/api/tests/LoginAPITest.java
 /Users/sovanparija/demoProjectTDD/src/test/java/com/framework/base/BaseTest.java
 /Users/sovanparija/demoProjectTDD/src/test/java/com/framework/runners/CucumberRunner.java
 /Users/sovanparija/demoProjectTDD/src/test/java/com/framework/runners/Hooks.java

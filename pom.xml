@@ -133,6 +133,29 @@
             <version>2.25.0</version>
             <scope>test</scope>
         </dependency>
+        <!-- RestAssured — REST API testing -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.4.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JSON schema validation for API responses -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>5.4.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Hamcrest matchers — used in .body() assertions -->
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>2.2</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 
@@ -222,6 +245,35 @@
                             </suiteXmlFiles>
                             <systemPropertyVariables>
                                 <platform>ios</platform>
+                                <allure.results.directory>
+                                    target/allure-results
+                                </allure.results.directory>
+                            </systemPropertyVariables>
+                            <argLine>
+                                -javaagent:/Users/sovanparija/.m2/repository/org/aspectj/aspectjweaver/1.9.21/aspectjweaver-1.9.21.jar
+                            </argLine>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- API profile: mvn test -Papi -->
+        <profile>
+            <id>api</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.2.5</version>
+                        <configuration>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>
+                                    src/test/resources/testsuite/testng-api.xml
+                                </suiteXmlFile>
+                            </suiteXmlFiles>
+                            <systemPropertyVariables>
                                 <allure.results.directory>
                                     target/allure-results
                                 </allure.results.directory>
