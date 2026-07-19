@@ -1,1 +1,8 @@
-node_modules/\n.DS_Store\ntarget/\nbuild/\nDerivedData/\nallure-results/\n.idea/
+node_modules/
+.DS_Store
+target/
+build/
+DerivedData/
+allure-results/
+.idea/
+repo.log

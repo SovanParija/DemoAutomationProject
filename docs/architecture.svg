@@ -1,0 +1,154 @@
+<svg viewBox="0 0 980 700" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono','SF Mono',Menlo,monospace">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1220"/><stop offset="1" stop-color="#131a2c"/>
+    </linearGradient>
+    <linearGradient id="andr" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3DDC84" stop-opacity=".9"/><stop offset="1" stop-color="#3DDC84" stop-opacity=".45"/>
+    </linearGradient>
+    <linearGradient id="ios" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0A84FF" stop-opacity=".9"/><stop offset="1" stop-color="#0A84FF" stop-opacity=".45"/>
+    </linearGradient>
+    <linearGradient id="ai" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#C879FF" stop-opacity=".9"/><stop offset="1" stop-color="#C879FF" stop-opacity=".45"/>
+    </linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#54627f"/>
+    </marker>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="980" height="700" rx="14" fill="url(#bg)"/>
+  <rect x="1.5" y="1.5" width="977" height="697" rx="13" fill="none" stroke="#26314c" stroke-width="1.5"/>
+
+  <!-- title -->
+  <text x="36" y="46" fill="#e8ecf4" font-size="21" font-weight="700">Appium Cross-Platform TDD/BDD Framework</text>
+  <text x="36" y="68" fill="#7f8ba3" font-size="11.5">Java 17 · Appium 3.5.2 · TestNG · Cucumber · RestAssured · Allure · Claude AI — one page object layer, two real devices</text>
+  <line x1="36" y1="84" x2="944" y2="84" stroke="#26314c"/>
+
+  <!-- CONFIG LAYER -->
+  <g>
+    <rect x="36" y="106" width="200" height="118" rx="10" fill="#171f33" stroke="#2c3a5c"/>
+    <text x="52" y="130" fill="#FFB454" font-size="11" font-weight="700" letter-spacing="1.5">CONFIG</text>
+    <rect x="52" y="142" width="168" height="30" rx="6" fill="#0f1526" stroke="#33415f"/>
+    <text x="62" y="161" fill="#dde4f0" font-size="11.5">config.yaml</text>
+    <rect x="52" y="180" width="168" height="30" rx="6" fill="#0f1526" stroke="#33415f"/>
+    <text x="62" y="199" fill="#dde4f0" font-size="11.5">ConfigManager</text>
+    <text x="62" y="219" fill="#6b7691" font-size="9.5">singleton · auto platform detect</text>
+  </g>
+
+  <!-- DRIVER LAYER -->
+  <g>
+    <rect x="36" y="252" width="200" height="96" rx="10" fill="#171f33" stroke="#2c3a5c"/>
+    <text x="52" y="276" fill="#FFB454" font-size="11" font-weight="700" letter-spacing="1.5">DRIVER</text>
+    <rect x="52" y="288" width="168" height="30" rx="6" fill="#0f1526" stroke="#33415f"/>
+    <text x="62" y="307" fill="#dde4f0" font-size="11.5">DriverManager</text>
+    <text x="62" y="336" fill="#6b7691" font-size="9.5">ThreadLocal&lt;AppiumDriver&gt;</text>
+  </g>
+
+  <!-- PAGE LAYER -->
+  <g>
+    <rect x="290" y="106" width="230" height="242" rx="10" fill="#171f33" stroke="#2c3a5c"/>
+    <text x="306" y="130" fill="#FFB454" font-size="11" font-weight="700" letter-spacing="1.5">PAGES · ONE CLASS, TWO OS</text>
+    <rect x="306" y="142" width="198" height="30" rx="6" fill="#0f1526" stroke="#33415f"/>
+    <text x="316" y="161" fill="#dde4f0" font-size="11.5">BasePage</text>
+    <text x="316" y="186" fill="#6b7691" font-size="9.5">AppiumFieldDecorator</text>
+    <rect x="306" y="196" width="198" height="30" rx="6" fill="#0f1526" stroke="#33415f"/>
+    <text x="316" y="215" fill="#dde4f0" font-size="11.5">LoginPage</text>
+    <rect x="306" y="234" width="198" height="30" rx="6" fill="#0f1526" stroke="#33415f"/>
+    <text x="316" y="253" fill="#dde4f0" font-size="11.5">MyDemoAppHomePage</text>
+    <rect x="306" y="276" width="95" height="22" rx="11" fill="none" stroke="#3DDC84"/>
+    <text x="318" y="291" fill="#3DDC84" font-size="9.5">@AndroidFindBy</text>
+    <rect x="409" y="276" width="95" height="22" rx="11" fill="none" stroke="#0A84FF"/>
+    <text x="417" y="291" fill="#0A84FF" font-size="9.5">@iOSXCUITFindBy</text>
+    <text x="306" y="325" fill="#6b7691" font-size="9.5">stacked annotations resolved at</text>
+    <text x="306" y="338" fill="#6b7691" font-size="9.5">runtime — zero duplicated pages</text>
+  </g>
+
+  <!-- TEST LAYER -->
+  <g>
+    <rect x="574" y="106" width="370" height="242" rx="10" fill="#171f33" stroke="#2c3a5c"/>
+    <text x="590" y="130" fill="#FFB454" font-size="11" font-weight="700" letter-spacing="1.5">TEST LAYERS</text>
+    <!-- TDD -->
+    <rect x="590" y="142" width="162" height="88" rx="8" fill="#0f1526" stroke="#33415f"/>
+    <text x="602" y="162" fill="#9fb0cc" font-size="10" font-weight="700">TDD · TestNG</text>
+    <text x="602" y="182" fill="#dde4f0" font-size="10.5">MDA_1234_ValidLoginTest</text>
+    <text x="602" y="200" fill="#dde4f0" font-size="10.5">BaseTest lifecycle</text>
+    <text x="602" y="218" fill="#6b7691" font-size="9.5">suites: android · ios · api</text>
+    <!-- BDD -->
+    <rect x="766" y="142" width="162" height="88" rx="8" fill="#0f1526" stroke="#33415f"/>
+    <text x="778" y="162" fill="#9fb0cc" font-size="10" font-weight="700">BDD · Cucumber</text>
+    <text x="778" y="182" fill="#dde4f0" font-size="10.5">login.feature</text>
+    <text x="778" y="200" fill="#dde4f0" font-size="10.5">StepDefinitions + Hooks</text>
+    <text x="778" y="218" fill="#6b7691" font-size="9.5">CucumberRunner</text>
+    <!-- API -->
+    <rect x="590" y="242" width="338" height="88" rx="8" fill="#0f1526" stroke="#33415f"/>
+    <text x="602" y="262" fill="#9fb0cc" font-size="10" font-weight="700">API · RestAssured</text>
+    <text x="602" y="282" fill="#dde4f0" font-size="10.5">BaseAPITest → APIClient → LoginAPITest</text>
+    <text x="602" y="300" fill="#6b7691" font-size="9.5">given/when/then · bearer auth · status + schema asserts</text>
+    <text x="602" y="318" fill="#6b7691" font-size="9.5">runs without a device — pipeline-fast feedback</text>
+  </g>
+
+  <!-- DATA -->
+  <g>
+    <rect x="36" y="376" width="200" height="96" rx="10" fill="#171f33" stroke="#2c3a5c"/>
+    <text x="52" y="400" fill="#FFB454" font-size="11" font-weight="700" letter-spacing="1.5">TEST DATA</text>
+    <rect x="52" y="412" width="168" height="30" rx="6" fill="#0f1526" stroke="#33415f"/>
+    <text x="62" y="431" fill="#dde4f0" font-size="11.5">TestDataManager</text>
+    <text x="62" y="460" fill="#6b7691" font-size="9.5">json per platform · 5 scenarios</text>
+  </g>
+
+  <!-- AI LAYER -->
+  <g>
+    <rect x="290" y="376" width="654" height="130" rx="10" fill="#171f33" stroke="#4b3a66"/>
+    <rect x="290" y="376" width="4" height="130" rx="2" fill="url(#ai)"/>
+    <text x="310" y="400" fill="#C879FF" font-size="11" font-weight="700" letter-spacing="1.5">JARVIS · AI LAYER (Claude API)</text>
+    <rect x="310" y="414" width="140" height="30" rx="6" fill="#0f1526" stroke="#4b3a66"/>
+    <text x="320" y="433" fill="#dde4f0" font-size="10.5">CommandParser</text>
+    <rect x="462" y="414" width="140" height="30" rx="6" fill="#0f1526" stroke="#4b3a66"/>
+    <text x="472" y="433" fill="#dde4f0" font-size="10.5">MavenExecutor</text>
+    <rect x="614" y="414" width="150" height="30" rx="6" fill="#0f1526" stroke="#4b3a66"/>
+    <text x="624" y="433" fill="#dde4f0" font-size="10.5">PageObjectGenerator</text>
+    <rect x="776" y="414" width="150" height="30" rx="6" fill="#0f1526" stroke="#4b3a66"/>
+    <text x="786" y="433" fill="#dde4f0" font-size="10.5">FailureAnalyzer</text>
+    <text x="310" y="470" fill="#6b7691" font-size="9.5">"run login suite" → executes mvn → AllureResultsReader parses outcome → Claude explains failures</text>
+    <text x="310" y="488" fill="#6b7691" font-size="9.5">generates + compiles page classes at runtime (JarvisFileWriter · JarvisCompiler) — engineer reviews before merge</text>
+  </g>
+
+  <!-- EXECUTION TARGETS -->
+  <g>
+    <rect x="36" y="534" width="440" height="120" rx="10" fill="#12241c" stroke="#2a5c44" filter="url(#glow)"/>
+    <rect x="36" y="534" width="440" height="4" rx="2" fill="url(#andr)"/>
+    <text x="52" y="562" fill="#3DDC84" font-size="11" font-weight="700" letter-spacing="1.5">ANDROID · REAL DEVICE</text>
+    <text x="52" y="586" fill="#dde4f0" font-size="11">Google Pixel · Android 16 · UiAutomator2 8.0.1</text>
+    <text x="52" y="608" fill="#6b7691" font-size="9.5">APK-path capability workaround for Android 16</text>
+    <text x="52" y="624" fill="#6b7691" font-size="9.5">install restrictions · SplashActivity launch</text>
+  </g>
+  <g>
+    <rect x="504" y="534" width="440" height="120" rx="10" fill="#12203a" stroke="#25497c" filter="url(#glow)"/>
+    <rect x="504" y="534" width="440" height="4" rx="2" fill="url(#ios)"/>
+    <text x="520" y="562" fill="#0A84FF" font-size="11" font-weight="700" letter-spacing="1.5">iOS · REAL DEVICE</text>
+    <text x="520" y="586" fill="#dde4f0" font-size="11">iPhone 12 Pro Max · iOS 18.5 · XCUITest 11.17.6</text>
+    <text x="520" y="608" fill="#6b7691" font-size="9.5">WebDriverAgent signed in Xcode · app built from</text>
+    <text x="520" y="624" fill="#6b7691" font-size="9.5">source · predicate locators via Appium Inspector</text>
+  </g>
+
+  <!-- FLOWS -->
+  <path d="M136 224 L136 252" stroke="#54627f" stroke-width="1.5" marker-end="url(#arr)"/>
+  <path d="M236 300 L290 300 L290 260" stroke="#54627f" stroke-width="1.5" fill="none" marker-end="url(#arr)" opacity=".001"/>
+  <path d="M236 300 L262 300 L262 227 L290 227" stroke="#54627f" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M520 227 L574 227" stroke="#54627f" stroke-width="1.5" marker-end="url(#arr)"/>
+  <path d="M136 376 L136 348" stroke="#54627f" stroke-width="1.5" marker-end="url(#arr)"/>
+  <path d="M236 424 L262 424 L262 441 L290 441" stroke="#54627f" stroke-width="1.5" fill="none" marker-end="url(#arr)" opacity=".001"/>
+  <path d="M617 348 L617 376" stroke="#8a5fb0" stroke-width="1.5" marker-end="url(#arr)"/>
+  <path d="M256 594 L256 506 L290 506" stroke="#3DDC84" stroke-width="1.5" fill="none" opacity=".0"/>
+  <path d="M136 472 L136 534" stroke="#3DDC84" stroke-width="1.5" marker-end="url(#arr)" opacity=".6"/>
+  <path d="M724 506 L724 534" stroke="#0A84FF" stroke-width="1.5" marker-end="url(#arr)" opacity=".6"/>
+  <path d="M256 506 L256 534" stroke="#3DDC84" stroke-width="1.5" opacity=".0"/>
+
+  <!-- reporting strip -->
+  <rect x="36" y="672" width="908" height="1" fill="#26314c" opacity="0"/>
+  <text x="36" y="684" fill="#7f8ba3" font-size="10">REPORTING&#160;&#160;Allure (AspectJ weaving) · log4j2 · environment.properties device metadata&#160;&#160;&#160;&#160;|&#160;&#160;&#160;&#160;NEXT&#160;&#160;Jenkins → AWS CodePipeline → Device Farm → S3 reports → Slack</text>
+</svg>
